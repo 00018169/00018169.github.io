@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Contact Inspire Adventures" />
+		<title>Inspire Adventures | Contacts</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<script src="scripts/scripts.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="logo">
+					<img src="./images/logo.webp" alt="" class="logo_img" />
+					<h3 class="logo_head">Inspire Adventures</h3>
+				</div>
+				<ul class="nav-links">
+					<li><a href="index.html">Welcome</a></li>
+					<li><a href="find-trip.html">Find Trip</a></li>
+					<li><a href="offering.html">Offerings</a></li>
+					<li><a href="bookings.html">Book Now</a></li>
+					<li><a href="contacts.html">Contacts</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Success Modal -->
+		<div id="successModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h2>Success!</h2>
+				<p>
+					Your message has been sent successfully. We'll get back to you soon!
+				</p>
+			</div>
+		</div>
+
+		<section class="contacts-section">
+			<div class="form">
+				<div class="form-container">
+					<h1>Contact Us</h1>
+					<p>We would love to hear from you! Reach out with any questions.</p>
+					<form
+						id="contactForm"
+						onsubmit="event.preventDefault(); showSuccessModal();"
+					>
+						<label for="name">Your Name:</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Enter your name"
+							required
+						/>
+
+						<label for="email">Your Email:</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Enter your email"
+							required
+						/>
+
+						<label for="subject">Subject:</label>
+						<select id="subject" name="subject" required>
+							<option value="" disabled selected>Select a topic</option>
+							<option value="booking">Booking Inquiry</option>
+							<option value="support">Customer Support</option>
+							<option value="feedback">Feedback</option>
+							<option value="other">Other</option>
+						</select>
+
+						<label for="message">Your Message:</label>
+						<textarea
+							id="message"
+							name="message"
+							placeholder="Type your message here"
+							rows="5"
+							required
+						></textarea>
+
+						<button type="submit" class="find-ticket-button">
+							Send Message
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<!-- Address Section -->
+				<div class="footer-section">
+					<h3>Headquarters of Inspire Adventures</h3>
+					<p>12 Istiqbol street</p>
+					<p>Tashkent 100047</p>
+				</div>
+
+				<!-- Contact Information Section -->
+				<div class="footer-section">
+					<h3>Inspire Adventures</h3>
+					<p>+998 71 203 74 74</p>
+					<p>+998 71 238 74 00</p>
+					<p>
+						For correspondence: <a href="mailto:info@wiut.uz">info@wiut.uz</a>
+					</p>
+				</div>
+
+				<!-- Social Media Section -->
+				<div class="footer-section">
+					<h3>Social Media</h3>
+					<div class="social-icons">
+						<a href="https://www.instagram.com/wiutuni"
+							><img src="images/instagram-3.png" alt="Instagram"
+						/></a>
+						<a href="https://t.me/wiut_official_telegram"
+							><img src="images/twitter.png" alt="Twitter"
+						/></a>
+						<a href="https://www.instagram.com/wiutuni"
+							><img src="images/youtube.png" alt="YouTube"
+						/></a>
+						<a href="https://www.facebook.com/wiut.uz/"
+							><img src="images/facebook.png" alt="Facebook"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

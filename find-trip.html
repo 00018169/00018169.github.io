@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Welcome to Inspire Adventures - Home" />
+		<title>Inspire Adventures | Home</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="logo">Inspire Adventures</div>
+				<ul class="nav-links">
+					<li><a href="index.html">Welcome</a></li>
+					<li><a href="find-trip.html">Find Trip</a></li>
+					<li><a href="offering.html">Offerings</a></li>
+					<li><a href="bookings.html">Book Now</a></li>
+					<li><a href="contacts.html">Contacts</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="hero-section">
+			<!-- Background image -->
+			<div class="background-image"></div>
+			<div class="trip-finder">
+				<div class="form-container">
+					<h1>Find Your Trip</h1>
+					<p>Set your arrival and departure schedule</p>
+					<form action="offering.html" method="get">
+						<label for="origin">Travel starts from:</label>
+						<select id="origin" name="origin" required>
+							<option value="" disabled selected>Select origin city</option>
+							<option value="new-york">New York</option>
+							<option value="paris">Paris</option>
+							<option value="tokyo">Tokyo</option>
+							<option value="dubai">Dubai</option>
+							<option value="london">London</option>
+							<option value="singapore">Singapore</option>
+							<option value="hong-kong">Hong Kong</option>
+							<option value="sydney">Sydney</option>
+							<option value="toronto">Toronto</option>
+							<option value="mumbai">Mumbai</option>
+							<option value="istanbul">Istanbul</option>
+							<option value="moscow">Moscow</option>
+							<option value="berlin">Berlin</option>
+							<option value="madrid">Madrid</option>
+							<option value="seoul">Seoul</option>
+						</select>
+
+						<label for="destination">To:</label>
+						<select id="destination" name="destination" required>
+							<option value="" disabled selected>
+								Select destination city
+							</option>
+							<option value="new-york">New York</option>
+							<option value="paris">Paris</option>
+							<option value="tokyo">Tokyo</option>
+							<option value="dubai">Dubai</option>
+							<option value="london">London</option>
+							<option value="singapore">Singapore</option>
+							<option value="hong-kong">Hong Kong</option>
+							<option value="sydney">Sydney</option>
+							<option value="toronto">Toronto</option>
+							<option value="mumbai">Mumbai</option>
+							<option value="istanbul">Istanbul</option>
+							<option value="moscow">Moscow</option>
+							<option value="berlin">Berlin</option>
+							<option value="madrid">Madrid</option>
+							<option value="seoul">Seoul</option>
+						</select>
+
+						<label for="date">Departure date:</label>
+						<input type="date" id="date" name="date" required />
+
+						<label for="tour">Select tour:</label>
+						<select id="tour" name="tour" required>
+							<option value="" disabled selected>Select type of tour</option>
+							<option value="adventure">Adventure</option>
+							<option value="luxury">Luxury</option>
+							<option value="family">Family</option>
+							<option value="solo">Solo</option>
+						</select>
+
+						<button type="submit" class="find-ticket-button">
+							Find Your Ticket
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<!-- Address Section -->
+				<div class="footer-section">
+					<h3>Headquarters of Inspire Adventures</h3>
+					<p>12 Istiqbol street</p>
+					<p>Tashkent 100047</p>
+				</div>
+
+				<!-- Contact Information Section -->
+				<div class="footer-section">
+					<h3>Inspire Adventures</h3>
+					<p>+998 71 203 74 74</p>
+					<p>+998 71 238 74 00</p>
+					<p>
+						For correspondence: <a href="mailto:info@wiut.uz">info@wiut.uz</a>
+					</p>
+				</div>
+
+				<!-- Social Media Section -->
+				<div class="footer-section">
+					<h3>Social Media</h3>
+					<div class="social-icons">
+						<a href="https://www.instagram.com/wiutuni"
+							><img src="images/instagram-3.png" alt="Instagram"
+						/></a>
+						<a href="https://t.me/wiut_official_telegram"
+							><img src="images/twitter.png" alt="Twitter"
+						/></a>
+						<a href="https://www.instagram.com/wiutuni"
+							><img src="images/youtube.png" alt="YouTube"
+						/></a>
+						<a href="https://www.facebook.com/wiut.uz/"
+							><img src="images/facebook.png" alt="Facebook"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
