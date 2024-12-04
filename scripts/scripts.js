@@ -138,8 +138,111 @@ function validateAndSubmitContactForm(event) {
 	return false
 }
 
+// Validate booking form fields
+function validateName() {
+	const name = document.getElementById('full-name').value
+	if (name.length < 3) {
+		document.getElementById('nameError').textContent =
+			'Name must be at least 3 characters long'
+		return false
+	}
+	document.getElementById('nameError').textContent = ''
+	return true
+}
+
+function validateEmail() {
+	const email = document.getElementById('email').value
+	if (!email.includes('@')) {
+		document.getElementById('emailError').textContent = 'Invalid email address'
+		return false
+	}
+	document.getElementById('emailError').textContent = ''
+	return true
+}
+
+function validatePhone() {
+	const phone = document.getElementById('phone').value
+	if (phone.length < 10) {
+		document.getElementById('phoneError').textContent =
+			'Please enter a valid phone number'
+		return false
+	}
+	document.getElementById('phoneError').textContent = ''
+	return true
+}
+
+function validateCity() {
+	const city = document.getElementById('city').value
+	if (!city) {
+		document.getElementById('cityError').textContent = 'Please select a city'
+		return false
+	}
+	document.getElementById('cityError').textContent = ''
+	return true
+}
+
+function validateTour() {
+	const tour = document.getElementById('tour').value
+	if (!tour) {
+		document.getElementById('tourError').textContent = 'Please select a tour'
+		return false
+	}
+	document.getElementById('tourError').textContent = ''
+	return true
+}
+
+function validateDates() {
+	const startDate = new Date(document.getElementById('start-date').value)
+	const endDate = new Date(document.getElementById('end-date').value)
+	const today = new Date()
+
+	if (startDate < today) {
+		document.getElementById('startDateError').textContent =
+			'Start date cannot be in the past'
+		return false
+	}
+	if (endDate < startDate) {
+		document.getElementById('endDateError').textContent =
+			'End date must be after start date'
+		return false
+	}
+	document.getElementById('startDateError').textContent = ''
+	document.getElementById('endDateError').textContent = ''
+	return true
+}
+
+function validatePeople() {
+	const people = document.getElementById('people').value
+	if (people < 1) {
+		document.getElementById('peopleError').textContent =
+			'Number of people must be at least 1'
+		return false
+	}
+	document.getElementById('peopleError').textContent = ''
+	return true
+}
+
+function validateAndSubmitBookingForm(event) {
+	event.preventDefault()
+
+	const isValid =
+		validateName() &&
+		validateEmail() &&
+		validatePhone() &&
+		validateCity() &&
+		validateTour() &&
+		validateDates() &&
+		validatePeople()
+
+	if (isValid) {
+		document.getElementById('successModal').style.display = 'block'
+		document.getElementById('bookingForm').reset()
+	}
+
+	return false
+}
+
 // Close success modal
 function closeSuccessModal() {
 	document.getElementById('successModal').style.display = 'none'
-	document.getElementById('contactForm').reset()
 }

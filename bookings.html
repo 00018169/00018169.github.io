@@ -6,6 +6,7 @@
 		<meta name="description" content="Book Your Tour with Inspire Adventures" />
 		<title>Book Your Tour | Inspire Adventures</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<script src="scripts/scripts.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -25,18 +26,45 @@
 			</nav>
 		</header>
 
+		<!-- Success Modal -->
+		<div id="successModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeSuccessModal()">&times;</span>
+				<h2>Booking Successful!</h2>
+				<p>
+					Thank you for booking with Inspire Adventures. We will reach out to
+					you soon to confirm your booking details!
+				</p>
+			</div>
+		</div>
+
+		<!-- Error Modal -->
+		<div id="errorModal" class="modal">
+			<div class="modal-content error">
+				<span class="close" onclick="closeContactModal()">&times;</span>
+				<h2>Error</h2>
+				<p id="errorMessage"></p>
+			</div>
+		</div>
+
 		<section class="booking-section">
 			<div class="form-container">
 				<h1>Book Your Tour</h1>
-				<form action="#" method="post">
+				<form
+					id="bookingForm"
+					onsubmit="return validateAndSubmitBookingForm(event)"
+					method="POST"
+				>
 					<label for="full-name">Full Name:</label>
 					<input
 						type="text"
 						id="full-name"
 						name="full-name"
 						placeholder="Enter your full name"
+						onblur="validateName()"
 						required
 					/>
+					<span id="nameError" class="error-message"></span>
 
 					<label for="email">Email Address:</label>
 					<input
@@ -44,8 +72,10 @@
 						id="email"
 						name="email"
 						placeholder="Enter your email address"
+						onblur="validateEmail()"
 						required
 					/>
+					<span id="emailError" class="error-message"></span>
 
 					<label for="phone">Phone Number:</label>
 					<input
@@ -53,11 +83,13 @@
 						id="phone"
 						name="phone"
 						placeholder="Enter your phone number"
+						onblur="validatePhone()"
 						required
 					/>
+					<span id="phoneError" class="error-message"></span>
 
 					<label for="city">Select the City:</label>
-					<select id="city" name="city" required>
+					<select id="city" name="city" onchange="validateCity()" required>
 						<option value="" disabled selected>-- Select the city --</option>
 						<option value="new-york">New York</option>
 						<option value="paris">Paris</option>
@@ -75,9 +107,10 @@
 						<option value="madrid">Madrid</option>
 						<option value="seoul">Seoul</option>
 					</select>
+					<span id="cityError" class="error-message"></span>
 
 					<label for="tour">Select Tour:</label>
-					<select id="tour" name="tour" required>
+					<select id="tour" name="tour" onchange="validateTour()" required>
 						<option value="" disabled selected>-- Select a Tour --</option>
 						<option value="new-york">New York</option>
 						<option value="paris">Paris</option>
@@ -95,12 +128,27 @@
 						<option value="madrid">Madrid</option>
 						<option value="seoul">Seoul</option>
 					</select>
+					<span id="tourError" class="error-message"></span>
 
 					<label for="start-date">Select Date From:</label>
-					<input type="date" id="start-date" name="start-date" required />
+					<input
+						type="date"
+						id="start-date"
+						name="start-date"
+						onchange="validateDates()"
+						required
+					/>
+					<span id="startDateError" class="error-message"></span>
 
 					<label for="end-date">Select Date To:</label>
-					<input type="date" id="end-date" name="end-date" required />
+					<input
+						type="date"
+						id="end-date"
+						name="end-date"
+						onchange="validateDates()"
+						required
+					/>
+					<span id="endDateError" class="error-message"></span>
 
 					<label for="people">Number of People:</label>
 					<input
@@ -109,10 +157,18 @@
 						name="people"
 						min="1"
 						placeholder="Enter number of people"
+						onblur="validatePeople()"
 						required
 					/>
+					<span id="peopleError" class="error-message"></span>
 
-					<button type="submit" class="book-button">Book Now</button>
+					<button
+						type="submit"
+						class="book-button"
+						onclick="validateAndSubmitBookingForm(event)"
+					>
+						Book Now
+					</button>
 				</form>
 			</div>
 		</section>
