@@ -2,7 +2,7 @@
 
 This website was created as an educational project to demonstrate web development skills. The site represents a travel agency offering various types of trips and adventures.
 
-Visit the live site: [000018169.github.io](https://000018169.github.io)
+Visit the live site: [00018169.github.io](https://00018169.github.io)
 
 ## Features
 
