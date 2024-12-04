@@ -6,7 +6,7 @@
 		<meta name="description" content="Contact Inspire Adventures" />
 		<title>Inspire Adventures | Contacts</title>
 		<link rel="stylesheet" href="css/styles.css" />
-		<script src="scripts/scripts.js"></script>
+		<script src="scripts/scripts.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -29,11 +29,20 @@
 		<!-- Success Modal -->
 		<div id="successModal" class="modal">
 			<div class="modal-content">
-				<span class="close" onclick="closeModal()">&times;</span>
+				<span class="close" onclick="closeSuccessModal()">&times;</span>
 				<h2>Success!</h2>
 				<p>
 					Your message has been sent successfully. We'll get back to you soon!
 				</p>
+			</div>
+		</div>
+
+		<!-- Error Modal -->
+		<div id="errorModal" class="modal">
+			<div class="modal-content error">
+				<span class="close" onclick="closeContactModal()">&times;</span>
+				<h2>Error</h2>
+				<p id="errorMessage"></p>
 			</div>
 		</div>
 
@@ -44,43 +53,51 @@
 					<p>We would love to hear from you! Reach out with any questions.</p>
 					<form
 						id="contactForm"
-						onsubmit="event.preventDefault(); showSuccessModal();"
+						onsubmit="return validateAndSubmitContactForm(event)"
 					>
-						<label for="name">Your Name:</label>
+						<label for="contactName">Your Name:</label>
 						<input
 							type="text"
-							id="name"
-							name="name"
+							id="contactName"
+							name="contactName"
 							placeholder="Enter your name"
-							required
+							onblur="validateContactName()"
 						/>
+						<span id="nameError" class="error-message"></span>
 
-						<label for="email">Your Email:</label>
+						<label for="contactEmail">Your Email:</label>
 						<input
 							type="email"
-							id="email"
-							name="email"
+							id="contactEmail"
+							name="contactEmail"
 							placeholder="Enter your email"
-							required
+							onblur="validateContactEmail()"
 						/>
+						<span id="emailError" class="error-message"></span>
 
-						<label for="subject">Subject:</label>
-						<select id="subject" name="subject" required>
-							<option value="" disabled selected>Select a topic</option>
+						<label for="contactSubject">Subject:</label>
+						<select
+							id="contactSubject"
+							name="contactSubject"
+							onchange="validateContactSubject()"
+						>
+							<option value="">Select a topic</option>
 							<option value="booking">Booking Inquiry</option>
 							<option value="support">Customer Support</option>
 							<option value="feedback">Feedback</option>
 							<option value="other">Other</option>
 						</select>
+						<span id="subjectError" class="error-message"></span>
 
-						<label for="message">Your Message:</label>
+						<label for="contactMessage">Your Message:</label>
 						<textarea
-							id="message"
-							name="message"
+							id="contactMessage"
+							name="contactMessage"
 							placeholder="Type your message here"
 							rows="5"
-							required
+							onblur="validateContactMessage()"
 						></textarea>
+						<span id="messageError" class="error-message"></span>
 
 						<button type="submit" class="find-ticket-button">
 							Send Message

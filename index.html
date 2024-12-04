@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Welcome to Inspire Adventures</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<script src="scripts/scripts.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -14,26 +15,27 @@
 					<h3 class="logo_head">Inspire Adventures</h3>
 				</div>
 				<ul class="nav-links">
-					<li><a href="index.html">Welcome</a></li>
-					<li><a href="find-trip.html">Find Trip</a></li>
-					<li><a href="offering.html">Offerings</a></li>
-					<li><a href="bookings.html">Book Now</a></li>
-					<li><a href="contacts.html">Contacts</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a href="index.html" class="nav-link">Welcome</a></li>
+					<li><a href="find-trip.html" class="nav-link">Find Trip</a></li>
+					<li><a href="offering.html" class="nav-link">Offerings</a></li>
+					<li><a href="bookings.html" class="nav-link">Book Now</a></li>
+					<li><a href="contacts.html" class="nav-link">Contacts</a></li>
+					<li><a href="about.html" class="nav-link">About</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<div class="welcome-container">
-			<div class="overlay"></div>
+		<div class="welcome-container" id="welcomeContainer">
+			<div class="overlay" id="overlay"></div>
 			<img
 				src="images/welcome-background.jpg"
 				alt="Background"
 				class="background-image"
+				id="backgroundImage"
 			/>
-			<div class="welcome-content">
-				<h1>
-					This website was created to fulfill Web Technology module’s
+			<div class="welcome-content" id="welcomeContent">
+				<h1 id="welcomeText">
+					This website was created to fulfill Web Technology module's
 					requirements and does not represent an actual company or service.
 				</h1>
 			</div>
@@ -42,14 +44,14 @@
 		<footer class="footer">
 			<div class="footer-container">
 				<!-- Address Section -->
-				<div class="footer-section">
+				<div class="footer-section" id="addressSection">
 					<h3>Headquarters of Inspire Adventures</h3>
 					<p>12 Istiqbol street</p>
 					<p>Tashkent 100047</p>
 				</div>
 
 				<!-- Contact Information Section -->
-				<div class="footer-section">
+				<div class="footer-section" id="contactSection">
 					<h3>Inspire Adventures</h3>
 					<p>+998 71 203 74 74</p>
 					<p>+998 71 238 74 00</p>
@@ -59,21 +61,21 @@
 				</div>
 
 				<!-- Social Media Section -->
-				<div class="footer-section">
+				<div class="footer-section" id="socialSection">
 					<h3>Social Media</h3>
 					<div class="social-icons">
-						<a href="https://www.instagram.com/wiutuni"
-							><img src="images/instagram-3.png" alt="Instagram"
-						/></a>
-						<a href="https://t.me/wiut_official_telegram"
-							><img src="images/twitter.png" alt="Twitter"
-						/></a>
-						<a href="https://www.instagram.com/wiutuni"
-							><img src="images/youtube.png" alt="YouTube"
-						/></a>
-						<a href="https://www.facebook.com/wiut.uz/"
-							><img src="images/facebook.png" alt="Facebook"
-						/></a>
+						<a href="https://www.instagram.com/wiutuni" class="social-icon">
+							<img src="images/instagram-3.png" alt="Instagram" />
+						</a>
+						<a href="https://t.me/wiut_official_telegram" class="social-icon">
+							<img src="images/twitter.png" alt="Twitter" />
+						</a>
+						<a href="https://www.instagram.com/wiutuni" class="social-icon">
+							<img src="images/youtube.png" alt="YouTube" />
+						</a>
+						<a href="https://www.facebook.com/wiut.uz/" class="social-icon">
+							<img src="images/facebook.png" alt="Facebook" />
+						</a>
 					</div>
 				</div>
 			</div>
